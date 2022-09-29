@@ -1,0 +1,16 @@
+{
+  "name": "socket-notification-demo",
+  "version": "1.0",
+  "description": "demo",
+  "main": "token-receiver.js",
+  "scripts": {
+    "clean": "rm -f -- package-lock.json"
+  },
+  "author": "Vaionex",
+  "license": "MIT",
+  "dependencies": {
+    "websocket": "^1.0.34",
+    "axios": "^0.27.2"
+  }
+
+}
