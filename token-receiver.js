@@ -1,11 +1,11 @@
 const axios = require('axios').default;
 const WebSocketClient = require('websocket').client;
 
-const relysiaEndpoint = 'dev.relysia.com';
+const relysiaEndpoint = 'api.relysia.com';
 
 (async () => {
     // Login into account
-    const loginObject = await axios.post(`https://${relysiaEndpoint}/v1/auth`, {email: "test16@gmail.com", password: "123456"});
+    const loginObject = await axios.post(`https://${relysiaEndpoint}/v1/auth`, {email: "test14@vaionex.com", password: "123456"});
     console.log('Login completed', loginObject.data);
     // Connect websocket for this account
     const client = new WebSocketClient();
