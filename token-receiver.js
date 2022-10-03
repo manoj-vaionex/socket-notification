@@ -5,10 +5,10 @@ const relysiaEndpoint = 'api.relysia.com';
 
 (async () => {
     // Login into account
-    const loginObject = await axios.post(`http://${relysiaEndpoint}/v1/auth`, {email: "viral@vaionex.com", password: "4m4z1ngT3ch"});
+    const loginObject = await axios.post(`https://${relysiaEndpoint}/v1/auth`, {email: "test14@vaionex.com", password: "123456"});
     console.log('Login completed', loginObject.data);
     // Connect websocket for this account
-    const socket = io(`ws://${relysiaEndpoint}`, {
+    const socket = io(`wss://${relysiaEndpoint}`, {
         extraHeaders: {
             authToken: loginObject.data.data.token,
         },

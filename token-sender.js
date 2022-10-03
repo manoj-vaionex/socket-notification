@@ -11,7 +11,7 @@ const relysiaEndpoint = 'https://api.relysia.com';
     const sendResp = await axios.post(`${relysiaEndpoint}/v1/send`, {
         "dataArray":[
            {
-              "to":"1QDUCAWWmQqzp5kgEJqa1BqeyjtHaxhMe4", // Receiver address
+              "to":"2822@relysia.com", // Receiver address
               "amount": 0.0000001, // Amount to send
               "notes": "Good test token for BSV" // Notes to send
            }
