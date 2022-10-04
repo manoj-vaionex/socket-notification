@@ -12,6 +12,7 @@ const relysiaEndpoint = 'api.relysia.com';
         extraHeaders: {
             authToken: loginObject.data.data.token,
         },
+        transports: ['websocket', 'polling']
     });
 
     socket.on('error', function(error) {
