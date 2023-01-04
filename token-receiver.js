@@ -19,11 +19,21 @@ const relysiaEndpoint = 'api.relysia.com';
         console.log("Connection Error: " + error.toString());
     });
 
-    // Listen for messages and log them as notification arrive
+        // Listen for message and log them as notification arrive
     socket.on('notification', function (message) {
         console.log('event received', message);
     })
 
+    // listen for balance and log them on balance arrive
+    socket.on('balance', function (balance) {
+        console.log('event received', balance);
+    })
+
+    // listen for history and log them on history arrive
+    socket.on('history', function (history) {
+        console.log('event received', history);
+    })
+    
     socket.on('connect', function(connection) {
         console.log('WebSocket Client Connected');
 
