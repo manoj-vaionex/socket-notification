@@ -1,6 +1,15 @@
-const axios = require('axios').default;
-const { io } = require('socket.io-client')
-
+<!doctype html>
+<html>
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.2/axios.min.js" integrity="sha512-QTnb9BQkG4fBYIt9JGvYmxPpd6TBeKp6lsUrtiVQsrJ9sb33Bn9s0wMQO9qVBFbPX3xHRAsBHvXlcsrnJjExjg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script
+      src="https://cdn.socket.io/4.3.2/socket.io.min.js"
+      integrity="sha384-KAZ4DtjNhLChOB/hxXuKqhMLYvx3b5MlT55xPEiNmREKRzeEm+RVPlTnAn0ajQNs"
+      crossorigin="anonymous"
+    ></script>
+</head>
+<body>
+<script>
 const relysiaEndpoint = 'api.relysia.com';
 
 (async () => {
@@ -41,3 +50,6 @@ const relysiaEndpoint = 'api.relysia.com';
         console.log('echo-protocol Connection Closed');
     });
 })()
+</script>
+</body>
+</html>
