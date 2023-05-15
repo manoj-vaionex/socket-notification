@@ -5,7 +5,7 @@ const relysiaEndpoint = 'api.relysia.com';
 
 (async () => {
     // Login into account
-    const loginObject = await axios.post(`https://${relysiaEndpoint}/v1/auth`, {email: "test14@vaionex.com", password: "123456"});
+    const loginObject = await axios.post(`https://${relysiaEndpoint}/v1/auth`, { email: "test14@vaionex.com", password: "123456" });
     console.log('Login completed', loginObject.data);
     // Connect websocket for this account
     const socket = io(`wss://${relysiaEndpoint}`, {
@@ -15,13 +15,18 @@ const relysiaEndpoint = 'api.relysia.com';
         transports: ['websocket', 'polling']
     });
 
-    socket.on('error', function(error) {
+    socket.on('error', function (error) {
         console.log("Connection Error: " + error.toString());
     });
 
-        // Listen for message and log them as notification arrive
+    // Listen for message and log them as notification arrive
     socket.on('notification', function (message) {
         console.log('event received', message);
+    })
+
+    // listenning for specific walletId notification with event name `notification:${walletId}`
+    socket.on(`notification:00000000-0000-0000-0000-000000000000`, function (message) {
+        console.log('event received for specific wallet', message);
     })
 
     // listen for balance and log them on balance arrive
@@ -33,12 +38,12 @@ const relysiaEndpoint = 'api.relysia.com';
     socket.on('history', function (history) {
         console.log('event received', history);
     })
-    
-    socket.on('connect', function(connection) {
+
+    socket.on('connect', function (connection) {
         console.log('WebSocket Client Connected');
 
-        
-        socket.on('close', function() {
+
+        socket.on('close', function () {
             console.log('echo-protocol Connection Closed');
         });
     });
