@@ -24,8 +24,8 @@ const relysiaEndpoint = 'api.relysia.com';
         console.log('event received', message);
     })
 
-    // listenning for specific walletId notification with event name `notification:${walletId}`
-    socket.on(`notification:00000000-0000-0000-0000-000000000000`, function (message) {
+    // listenning for specific walletId notification with event name `notification:wallet:${walletId}`
+    socket.on(`notification:wallet:00000000-0000-0000-0000-000000000000`, function (message) {
         console.log('event received for specific wallet', message);
     })
 
