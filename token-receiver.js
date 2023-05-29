@@ -19,6 +19,11 @@ const relysiaEndpoint = 'api.relysia.com';
         console.log("Connection Error: " + error.toString());
     });
 
+    // Listen for global message and log them as notification arrive
+    socket.on('notification:global', function (message) {
+        console.log('global event received', message);
+    })
+
     // Listen for message and log them as notification arrive
     socket.on('notification', function (message) {
         console.log('event received', message);
